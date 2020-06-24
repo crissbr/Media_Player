@@ -26,15 +26,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void inicializarSeekbar() {
         seekVolume = findViewById(R.id.seekVolume);
-        //conf obj Audio Manager
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         int volumeMaximo = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
         int volumeAtual = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
 
-        //conf volume maximo p/o seekbar
+
         seekVolume.setMax(volumeMaximo);
-        //confg progresso atual seekbar
         seekVolume.setProgress(volumeAtual);
 
         seekVolume.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -79,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         if(mediaPlayer != null && mediaPlayer.isPlaying()){
             mediaPlayer.stop();
-            mediaPlayer.release();  //p/nao deix music na memo do cel
-            mediaPlayer = null;     //nao guar espc na memo
+            mediaPlayer.release();
+            mediaPlayer = null;   
         }
     }
 
