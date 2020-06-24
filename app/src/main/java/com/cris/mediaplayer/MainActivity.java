@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         if(mediaPlayer != null && mediaPlayer.isPlaying()){
             mediaPlayer.stop();
             mediaPlayer.release();
-            mediaPlayer = null;   
+            mediaPlayer = null;
         }
     }
 
